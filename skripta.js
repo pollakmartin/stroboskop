@@ -9,6 +9,12 @@ window.addEventListener('load', function() {
         document.getElementById("barve").appendChild(input);
 	}
 	
+	var odstraniBarve = function(){
+		document.querySelector("#barve").innerHTML = "";
+	}
+	
+	document.querySelector("#odstraniBarve").addEventListener('click', odstraniBarve);
+	
 	document.querySelector("#novaBarva") 
 		.addEventListener('click', dodajBarvo);
 		
