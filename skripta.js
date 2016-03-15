@@ -13,10 +13,18 @@ window.addEventListener('load', function() {
 		document.querySelector("#barve").innerHTML = "";
 	}
 	
+	var gumbZaZagon = function(){
+		document.querySelector("#start").innerHTML = "";
+	}
+	
 	document.querySelector("#odstraniBarve").addEventListener('click', odstraniBarve);
 	
 	document.querySelector("#novaBarva") 
 		.addEventListener('click', dodajBarvo);
+		
+	document.querySelector("#start").addEventListener('click', function() {
+	    this.innerHTML = ""
+	})
 		
 	//Odstrani barve
 	
@@ -39,7 +47,11 @@ window.addEventListener('load', function() {
 	}
 	
 	var stop = function(event) {
+		var start = document.querySelector("#start");
+		start.innerHTML = "Zaženi stroboskop";
 		ustavi = true;
+		start.removeEventListener('click', stop);
+		start.addEventListener('click', zagon);
 	}
 	
 	var zagon = function(event) {
