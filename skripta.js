@@ -40,6 +40,8 @@ window.addEventListener('load', function() {
 		if (ustavi) {
 			ustavi = false;
 		} else {
+			minCas = document.querySelector("#min").value;
+			maxCas = document.querySelector("#max").value;
 			novId = (id+1) % vrednosti.length;
 			timeout = Math.floor((Math.random() * (maxCas-minCas)) + minCas);
 			setTimeout(function() {spremeniBarvo(novId)} , timeout);
